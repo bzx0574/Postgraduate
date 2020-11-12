@@ -140,6 +140,26 @@ void SortElem(int a[], int m, int n) {
 		a[j + 1] = temp;
 	}
 }
+void DeleteDifference1(LNode* a, LNode* b) {
+	LNode* pa = a->next, * pb = b->next;
+	LNode* pre = a;
+	LNode* r;
+	while (pa != NULL && pb != NULL) {
+		if (pa->data < pb->data) {
+			pre = pa;
+			pa = pa->next;
+		}
+		else if (pa->data > pb->data) {
+			pb = pb->next;
+		}
+		else {
+			pre->next = pa->next;
+			r = pa;
+			pa = pa->next;
+			free(r);
+		}
+	}
+}
 
 int main()
 {
