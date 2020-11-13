@@ -25,6 +25,22 @@ typedef struct DLNode {
 	struct DLNode* priot;
 	struct DLNode* next;
 }DLNode;
+//结构体：顺序栈
+typedef struct SqStack {
+	int data[maxSize];
+	int top;
+}SqStack;
+//结构体：顺序队列
+typedef struct SqQueue {
+	int data[maxSize];
+	int front;
+	int rear;
+}SqQueue;
+//结构体：链队
+typedef struct LiQueue {
+	LNode* front;
+	LNode* rear;
+}LiQueue;
 //初始化顺序表
 void CreateList(SqList& L, int a[], int n)
 {
@@ -140,7 +156,8 @@ void SortElem(int a[], int m, int n) {
 		a[j + 1] = temp;
 	}
 }
-void DeleteDifference1(LNode* a, LNode* b) {
+//删除不同的数字
+void DeleteDifference(LNode* a, LNode* b) {
 	LNode* pa = a->next, * pb = b->next;
 	LNode* pre = a;
 	LNode* r;
