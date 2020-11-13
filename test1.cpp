@@ -42,7 +42,7 @@ typedef struct LiQueue {
 	LNode* rear;
 }LiQueue;
 //初始化顺序表
-void CreateList(SqList& L, int a[], int n)
+void CreateSqList(SqList& L, int a[], int n)
 {
 	int i;
 	L.length = n;
@@ -120,7 +120,7 @@ void Merge(LNode* a, LNode* b, LNode*& c) {
 	}
 }
 //用尾插法创建单链表
-void CreateList(LNode*& c, int a[], int n) {
+void CreateLNodeList(LNode*& c, int a[], int n) {
 	LNode* s, * r;
 	int i;
 	c = (LNode*)malloc(sizeof(LNode));
@@ -177,14 +177,38 @@ void DeleteDifference(LNode* a, LNode* b) {
 		}
 	}
 }
-
+/*
+在单链表中找到倒数k个节点
+并返回该节点的值
+*/
+int FindElemLNode(LNode* head, int k) {
+	LNode* p1 = head->next;
+	LNode* p = head;
+	int i;
+	i = 1;
+	while (p1 != NULL) {
+		p1 = p1->next;
+		++i;
+		if (i > k) {
+			p = p->next;
+		}
+	}
+	if (p == head)
+	{
+		return 0;
+	}
+	else
+	{
+		cout << p->data << endl;
+		return 1;
+	}
+}
 int main()
 {
-	int i;
-	int a[] = { 1,3,5,7,2,4,6 };
-	SortElem(a, 4, 3);
-	for (i = 0; i < 7; ++i) {
-		cout << a[i] << endl;
-	}
+	LNode* l;
+	l = (LNode*)malloc(sizeof(LNode));
+	int a[] = { 1,2,3,4,5,6,7,8,9 };
+	CreateLNodeList(l, a, 9);
+	FindElemLNode(l, 3);
 	return 0;
 }
