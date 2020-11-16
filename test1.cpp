@@ -186,7 +186,8 @@ int FindElemLNode(LNode* head, int k) {
 	LNode* p = head;
 	int i;
 	i = 1;
-	while (p1 != NULL) {
+	while (p1 != NULL)
+	{
 		p1 = p1->next;
 		++i;
 		if (i > k) {
@@ -203,6 +204,40 @@ int FindElemLNode(LNode* head, int k) {
 		return 1;
 	}
 }
+//初始化栈
+void InitStack(SqStack& st) {
+	st.top = -1;
+}
+//判断栈空
+int IsEmptyStack(SqStack st) {
+	if (st.top == -1) {
+		return -1;
+	}
+	else {
+		return 0;
+	}
+}
+//进栈
+int PushStack(SqStack& st, int x) {
+	if (st.top == maxSize - 1) {
+		return 0;
+	}
+	++(st.top);
+	st.data[st.top] = x;
+	return 1;
+}
+//出栈
+int PopStack(SqStack& st, int& x) {
+	if (st.top == -1) {
+		return 0;
+	}
+	x = st.data[st.top];
+	--(st.top);
+	return 1;
+}
+
+
+
 int main()
 {
 	LNode* l;
