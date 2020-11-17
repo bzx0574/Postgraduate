@@ -9,17 +9,24 @@ using namespace std;
 * 如果temp大则查在该元素后面
 */
 void InsertElem(int a[], int m, int n) {
-	int i, j, temp;
-	for (i = m; i < m + n ; ++i) {
+	//int i, j, temp;
+	//for (i = m; i < m + n; ++i) {
+	//	temp = a[i];
+	//	for (j = i - 1; j >= 0; --j) {
+	//		if (temp < a[j]) {
+	//			a[j + 1] = a[j];
+	//		}
+	//	}
+	//	a[j + 1] = temp;
+	//}
+	int i, j;
+	int temp;
+	for (i = m; i < m + n; ++i) {
 		temp = a[i];
-		for (j = i - 1; j >= 0; --j) {
-			if (temp >= a[j]) {
-				a[j + 1] = temp;
-			}
-			else {
-				a[j + 1] = a[j];
-			}
+		for (j = i - 1; j >= 0 && temp < a[j]; --j) {
+			a[j + 1] = a[j];
 		}
+		a[j + 1] = temp;
 	}
 }
 void PrintArray(int a[], int length) {
@@ -33,10 +40,10 @@ int main() {
 	int m, n;
 	m = 5;
 	n = 4;
-	int a[] = {1,3,5,7,9,2,4,6,8};
+	int a[] = { 1,3,5,7,9,2,4,6,8 };
 	PrintArray(a, 9);
 	InsertElem(a, 5, 4);
 	PrintArray(a, 9);
-	
+
 	return 0;
 }
