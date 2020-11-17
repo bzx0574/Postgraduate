@@ -1,46 +1,7 @@
 ﻿#include <iostream>
-#define maxSize 100
-
+#include "typedef.h"
 using namespace std;
 
-//结构体：二叉树
-typedef struct BTNode {
-	int data;
-	struct BTNode* lchild;
-	struct BTNode* rchild;
-}BTNode;
-//结构体：顺序表
-typedef struct SqList {
-	int data[maxSize];
-	int length;
-}SqList;
-//结构体：单链表
-typedef struct LNode {
-	int data;
-	struct LNode* next;
-}LNode;
-//结构体：双链表
-typedef struct DLNode {
-	int data;
-	struct DLNode* priot;
-	struct DLNode* next;
-}DLNode;
-//结构体：顺序栈
-typedef struct SqStack {
-	int data[maxSize];
-	int top;
-}SqStack;
-//结构体：顺序队列
-typedef struct SqQueue {
-	int data[maxSize];
-	int front;
-	int rear;
-}SqQueue;
-//结构体：链队
-typedef struct LiQueue {
-	LNode* front;
-	LNode* rear;
-}LiQueue;
 //初始化顺序表
 void CreateSqList(SqList& L, int a[], int n)
 {
@@ -237,13 +198,13 @@ int PopStack(SqStack& st, int& x) {
 }
 
 
-
-int main()
-{
-	LNode* l;
-	l = (LNode*)malloc(sizeof(LNode));
-	int a[] = { 1,2,3,4,5,6,7,8,9 };
-	CreateLNodeList(l, a, 9);
-	FindElemLNode(l, 3);
-	return 0;
-}
+//
+//int main()
+//{
+//	LNode* l;
+//	l = (LNode*)malloc(sizeof(LNode));
+//	int a[] = { 1,2,3,4,5,6,7,8,9 };
+//	CreateLNodeList(l, a, 9);
+//	FindElemLNode(l, 3);
+//	return 0;
+//}
