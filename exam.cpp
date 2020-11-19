@@ -28,13 +28,13 @@ void PrintArray(int a[], int length) {
 		cout << a[i] << endl;
 	}
 }
-int main() {
-	int m, n;
-	m = 5;
-	n = 2;
-	int a[] = { 1,3,5,7,9,2,4};
-	PrintArray(a, 9);
-	InsertElem(a, 5, 2);
-	PrintArray(a, 9);
-	return 0;
-}
+//int main() {
+//	int m, n;
+//	m = 5;
+//	n = 2;
+//	int a[] = { 1,3,5,7,9,2,4};
+//	PrintArray(a, 9);
+//	InsertElem(a, 5, 2);
+//	PrintArray(a, 9);
+//	return 0;
+//}

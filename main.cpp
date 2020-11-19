@@ -198,13 +198,13 @@ int PopStack(SqStack& st, int& x) {
 }
 
 
-//
-//int main()
-//{
-//	LNode* l;
-//	l = (LNode*)malloc(sizeof(LNode));
-//	int a[] = { 1,2,3,4,5,6,7,8,9 };
-//	CreateLNodeList(l, a, 9);
-//	FindElemLNode(l, 3);
-//	return 0;
-//}
+
+int main()
+{
+	LNode* l;
+	l = (LNode*)malloc(sizeof(LNode));
+	int a[] = { 1,2,3,4,5,6,7,8,9 };
+	CreateLNodeList(l, a, 9);
+	FindElemLNode(l, 3);
+	return 0;
+}
