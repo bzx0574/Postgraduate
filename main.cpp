@@ -196,7 +196,20 @@ int PopStack(SqStack& st, int& x) {
 	--(st.top);
 	return 1;
 }
-
+//初始化链队
+void initQueue(LiQueue*& lqu) {
+	lqu = (LiQueue*)malloc(sizeof(LiQueue));
+	lqu->front = lqu->rear = NULL;
+}
+//判断队空
+int isQueueEmpty(LiQueue* lqu) {
+	if (lqu->rear == NULL || lqu->front == NULL) {
+		return 1;
+	}
+	else {
+		return 0;
+	}
+}
 
 
 int main()
