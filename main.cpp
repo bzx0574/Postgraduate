@@ -210,6 +210,33 @@ int isQueueEmpty(LiQueue* lqu) {
 		return 0;
 	}
 }
+/*
+* 一个算术表达式中的括号只有小括号。判断这个表达式是不是正确匹配
+*/
+int match(char exp[], int n) {
+	char stack[maxSize];
+	int top = -1;
+	int i;
+	for (i = 0; i < n; ++i) {
+		if (exp[i] == '(') {
+			stack[++top] = '(';
+		}
+		if (exp[i] == ')') {
+			if (top == -1) {
+				return 0;
+			}
+			else {
+				--top;
+			}
+		}
+	}
+	if (top == -1) {
+		return 1;
+	}
+	else {
+		return 0;
+	}
+}
 
 
 int main()
